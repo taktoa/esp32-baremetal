@@ -1,7 +1,11 @@
 let
+  #nixpkgsRev = "e73a0fab9d45827578153d16a01291c1f5d6d85e";
+  nixpkgsRev = "b946610275674229145ed02174c519263483b5f3";
+  #nixpkgsSha256 = "1z0bd8gsp1xcl5ghy3a2q6i0996rwpwflnki7zckzazbnkpa0q0v";
+  nixpkgsSha256 = "00a6q041h98hbjmlvm0bshn6di4jr38jgzb0cabv5kdwq3ssj900";
   nixpkgs = builtins.fetchTarball {
-    url = "https://github.com/taktoa/nixpkgs/archive/859e66dd48a40efa2a5645e611d73301833baeb2.tar.gz";
-    sha256 = "1dxc6cvcjdh9p9dkfywswi3hqdxka8a5zqfq7klcs0ic1hq8nsj5";
+    url = "https://github.com/taktoa/nixpkgs/archive/${nixpkgsRev}.tar.gz";
+    sha256 = nixpkgsSha256;
   };
   pkgs = import nixpkgs {};
   helloworldFun = { stdenv, esptool }:
